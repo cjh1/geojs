@@ -117,8 +117,9 @@ geoModule.archiveLayerSource = function(id, name, path, config, vars, onError) {
           console.log(errorString);
           m_onError(errorString);
         } else {
+          var data = window.atob(response.result).data[0];
           reader = ogs.vgl.geojsonReader();
-          retVal = reader.readGJObject(jQuery.parseJSON(response.result.data[0]));
+          retVal = reader.readGJObject(jQuery.parseJSON(data));
         }
       },
       error: function(jqXHR, textStatus, errorThrown ) {
