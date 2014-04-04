@@ -368,7 +368,7 @@ geo.openStreetMapLayer = function() {
 
   this.worldToGcs = function(x, y) {
     if (this.referenceLayer()) {
-      return [x * geo.mercator.r_major, y * geo.mercator.r_minor];
+      return [x * geo.mercator.r_major, y * geo.mercator.r_minor(true)];
     }
     
     throw "This layer is not a reference layer so cannot do the conversion";

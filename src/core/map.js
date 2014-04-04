@@ -929,7 +929,7 @@ geo.map = function(node, options) {
         // The constants below bring it to actual EPSG:3857 units.
         latlon = geo.mercator.m2ll(
           geo.mercator.deg2rad(worldPt[0]) * geo.mercator.r_major,
-          geo.mercator.deg2rad(worldPt[1]) * geo.mercator.r_minor),
+          geo.mercator.deg2rad(worldPt[1]) * geo.mercator.r_minor(true), true),
         location = {'x': latlon.lon, 'y': latlon.lat};
 
     return location;
